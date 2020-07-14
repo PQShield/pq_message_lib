@@ -1,0 +1,20 @@
+[package]
+name = "pq_message_lib"
+version = "1.0.0"
+authors = ["Oussama Danba <oussama.danba@pqshield.com>"]
+edition = "2018"
+license = "BSD-3-Clause"
+readme = "README.md"
+
+[lib]
+name = "pq_message_lib"
+crate-type = ["staticlib", "rlib"]
+
+[build-dependencies]
+cbindgen = "0.14.2"
+
+[dependencies]
+serde = { version = "1.0.110", default-features = false, features = ["derive"] }
+bincode = { version = "1.2.1", default-features = false }
+libc = { version = "0.2.69", default-features = false }
+lazy_static = { version = "1.4.0", default-features = false }
