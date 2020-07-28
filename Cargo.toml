@@ -1,6 +1,6 @@
 [package]
 name = "pq_message_lib"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Oussama Danba <oussama.danba@pqshield.com>"]
 edition = "2018"
 license = "BSD-3-Clause"

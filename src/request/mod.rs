@@ -1,5 +1,5 @@
 use serde::{Deserialize, Serialize};
-use std::convert::{TryInto};
+use std::convert::TryInto;
 
 lazy_static! {
     static ref REQUEST_HEADER_SIZE: u64 = bincode::serialized_size(&RequestHeader::default())
@@ -199,7 +199,7 @@ pub unsafe extern "C" fn structure_two_entries(
     );
 
     let data = data.add(usize_size_in_bytes);
-    std::ptr::copy_nonoverlapping(entry1, data, entry1_length);
+    std::ptr::copy(entry1, data, entry1_length);
 
     let data = data.add(entry1_length);
     std::ptr::copy_nonoverlapping(
@@ -209,7 +209,7 @@ pub unsafe extern "C" fn structure_two_entries(
     );
 
     let data = data.add(usize_size_in_bytes);
-    std::ptr::copy_nonoverlapping(entry2, data, entry2_length);
+    std::ptr::copy(entry2, data, entry2_length);
 
     0
 }
