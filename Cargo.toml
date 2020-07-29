@@ -18,3 +18,4 @@ serde = { version = "1.0.110", default-features = false, features = ["derive"] }
 bincode = { version = "1.2.1", default-features = false }
 libc = { version = "0.2.69", default-features = false }
 lazy_static = { version = "1.4.0", default-features = false }
+arbitrary = { version = "0.4.5", optional = true, features = ["derive"] }

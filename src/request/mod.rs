@@ -9,6 +9,7 @@ lazy_static! {
 /// All possible algorithms that can be requested.
 #[allow(non_camel_case_types)]
 #[derive(Serialize, Deserialize, PartialEq, Clone, Copy)]
+#[cfg_attr(feature = "arbitrary", derive(arbitrary::Arbitrary, Debug))]
 #[repr(C)]
 pub enum Algorithm {
     NoAlgorithm,
@@ -44,6 +45,7 @@ pub enum Algorithm {
 
 /// All possible operations that can be requested.
 #[derive(Serialize, Deserialize, PartialEq)]
+#[cfg_attr(feature = "arbitrary", derive(arbitrary::Arbitrary, Debug))]
 #[repr(C)]
 pub enum Operation {
     NoOperation,
@@ -77,6 +79,7 @@ impl Default for Operation {
 /// - algorithm is the `Algorithm` that the request is about.
 /// - operation is the `Operation` that the request is about.
 #[derive(Serialize, Deserialize, Default, PartialEq)]
+#[cfg_attr(feature = "arbitrary", derive(arbitrary::Arbitrary, Debug))]
 pub struct RequestHeader {
     pub version: u8,
     pub identifier: u64,
